@@ -55,12 +55,12 @@ const createRequest = (method, url, data = {}, options) => {
       headers['X-Real-IP'] = ip
       headers['X-Forwarded-For'] = ip
     }
-     //headers['X-Real-IP'] = '118.88.88.88'
+    headers['X-Real-IP'] = '118.88.88.88'
     if (typeof options.cookie === 'object') {
       if (!options.cookie.MUSIC_U) {
         // 游客
         if (!options.cookie.MUSIC_A) {
-           options.cookie.MUSIC_A = config.anonymous_token
+          // options.cookie.MUSIC_A = config.anonymous_token
         }
       }
       headers['Cookie'] = Object.keys(options.cookie)
